@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 2</title>
+    <style>
+      html {
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Kalkulator</h1>
+      <form>
+        <input type="number" id="angkaS" />
+        <select id="operasi">
+          <option value="tbh">+</option>
+          <option value="krn">-</option>
+          <option value="kli">*</option>
+          <option value="bag">/</option>
+        </select>
+        <input type="number" id="angkaD" />
+        =
+        <input type="number" id="angkaT" disabled />
+        <button type="button" onclick="exec()">Execute</button>
+      </form>
+    </center>
+  </body>
+  <script>
+    function exec() {
+      var operasi = document.getElementById('operasi').value;
+      var angka1 = parseInt(document.getElementById('angkaS').value);
+      var angka2 = parseInt(document.getElementById('angkaD').value);
+      var res = '';
+      if (operasi === 'tbh') {
+        res = angka1 + angka2;
+      } else if (operasi === 'krn') {
+        res = angka1 - angka2;
+      } else if (operasi === 'bag') {
+        res = angka1 / angka2;
+      } else if (operasi === 'kli') {
+        res = angka1 * angka2;
+      }
+      document.getElementById('angkaT').value = res;
+    }
+  </script>
+</html>
